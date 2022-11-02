@@ -1,0 +1,260 @@
+// // ====================
+// // Fonts Size Rem
+// // Input: $type (Property css), $size (Value Px)
+// // Output: $type: convert to $rem
+// // ---
+// // @function rem($size) {
+// //   $remSize: $size / 16;
+// //   @return #{$remSize}rem;
+// // }
+
+// @function rem($size){
+//     @return $size / $size-default + rem;
+// }
+
+// // Ex: @include sizeRem(font-size, 10px);
+// // ==> font-size: 0.625rem;
+// // Ex: @include sizeRem(padding-top, 10px,$important: true);
+// // ==> padding-top: 0.625rem !important;
+// // Ex: @include sizeRem(margin, 25px, 1);
+// // ==> margin: 25px 25px 25px 25px;
+// // Ex: @include sizeRem(margin, 25px, 1, !important);
+// // ==> margin: 25px 25px 25px 25px !important;
+// // Ex: @include sizeRem(margin, 25px, 2, 30px);
+// // ==> margin: 25px 30px 25px 30px;
+// // Ex: @include sizeRem(margin, 25px, 2, 30px, $important: true);
+// // ==> margin: 25px 30px 25px 30px !important;
+// // Ex: @include sizeRem(margin, 25px, 4, 30px, 35px, 40px);
+// // ==> margin: 25px 30px 35px 40px;
+// // Ex: @include sizeRem(margin, 25px, 4, 30px, 35px, 40px, $important: true);
+// // ==> margin: 25px 30px 35px 40px !important;
+// // Note: 0 => 0px
+// @mixin sizeRem($type, $size, $side: 0, $sizeright: false, $sizebottom: false, $sizeleft: false, $important:false) {
+//     @if $important{
+//         @if $side == 0 {
+//             #{$type}: rem($size) !important;  
+//         }
+//        @if $side == 1 {
+//         #{$type}: rem($size) rem($size) rem($size) rem($size) !important;  
+//       }
+//       @else if $side == 2 {
+//         #{$type}: rem($size) rem($sizeright) rem($size) rem($sizeright) !important;  
+//       }
+//       @else if $side == 4{
+//         #{$type}: rem($size) rem($sizeright) rem($sizebottom) rem($sizeleft) !important;  
+//       } 
+//     }
+//     @else {
+//         @if $side == 0 {
+//             #{$type}: rem($size);  
+//         }
+//        @if $side == 1 {
+//         #{$type}: rem($size) rem($size) rem($size) rem($size);  
+//       }
+//       @else if $side == 2 {
+//         #{$type}: rem($size) rem($sizeright) rem($size) rem($sizeright);  
+//       }
+//       @else if $side == 4{
+//         #{$type}: rem($size) rem($sizeright) rem($sizebottom) rem($sizeleft);  
+//       }  
+//     }
+  
+// }
+
+
+// // ====================
+// // Mixins
+// // ---
+// @mixin clearfix {
+//     &:before,
+//     &:after {
+//         display: table;
+//         content: " ";
+//     }
+//     &:after {
+//         clear: both;
+//     }
+// }
+
+
+
+// //@mixin fontawesome {
+// //    display: inline-block;
+// //    font: normal normal normal 14px/1 'Font Awesome 5 Pro';
+// //    font-size: inherit;
+// //    text-rendering: auto;
+// //    -webkit-font-smoothing: antialiased;
+// //    -moz-osx-font-smoothing: grayscale;
+// //}
+
+// @mixin fontawesome($font-family: fa) {
+//     -moz-osx-font-smoothing: grayscale;
+//     -webkit-font-smoothing: antialiased;
+//     display: inline-block;
+//     font-style: normal;
+//     font-variant: normal;
+//     text-rendering: auto;
+//     line-height: 1;
+//     @if $font-family == fab {
+//         font-family: 'Font Awesome 5 Brands';
+//     }
+//     @else if $font-family == far {
+//         font-family: 'Font Awesome 5 Pro';
+//         font-weight: 400;
+//     }
+//     @else if $font-family == fal {
+//         font-family: 'Font Awesome 5 Pro';
+//         font-weight: 300;
+//     }
+//     @else if $font-family == fa {
+//         font-family: 'Font Awesome 5 Pro';
+//         font-weight: 900;
+//     }
+//     @else if $font-family == fas {
+//         font-family: 'Font Awesome 5 Pro';
+//         font-weight: 900;
+//     }
+// }
+
+
+// // ====================
+// // Mixins Container bootstrap
+// // ---
+// @mixin container {
+//     width: 100%;
+//     padding-right: 15px;
+//     padding-left: 15px;
+//     margin-right: auto;
+//     margin-left: auto;
+
+//     @media (min-width: 576px) {
+//       max-width: 540px;
+//     }
+
+//     @media (min-width: 768px) {
+//       max-width: 720px;
+//     }
+
+//     @media (min-width: 992px) {
+//       max-width: 960px;
+//     }
+
+//     @media (min-width: 1200px) {
+//       max-width: 1140px;
+//     }
+// }
+
+
+// // ====================
+// // Mixins Flex
+// // ---
+// @mixin flex-row{
+//     @include display-flexbox;
+//     @include flex-wrap(wrap);
+// }
+
+// @mixin flex-col-xs {
+//     -webkit-flex-basis: 0;
+//     -ms-flex-preferred-size: 0;
+//     flex-basis: 0;
+//     -webkit-box-flex: 1;
+//     -webkit-flex-grow: 1;
+//     -ms-flex-positive: 1;
+//     flex-grow: 1;
+//     max-width: 100%;
+// }
+// @mixin flex-width-col-xs($val){
+//     -webkit-box-flex: 0;
+//     -webkit-flex: 0 0 $val;
+//     -ms-flex: 0 0 $val;
+//     flex: 0 0 $val;
+//     max-width: $val;
+// }
+
+// @mixin flex-width-auto{
+//     @include flex(1 1 auto);
+// }
+
+
+
+
+// // ====================
+// // Mixins Effect
+// // ---
+// @-webkit-keyframes fadeInFromNone {
+//     from {
+//         display: none;
+//         opacity: 0;
+//     }
+//     to {
+//         display: block;
+//         opacity: 1;
+//     }
+// }
+
+// @-moz-keyframes fadeInFromNone {
+//     from {
+//         display: none;
+//         opacity: 0;
+//     }
+//     to {
+//         display: block;
+//         opacity: 1;
+//     }
+// }
+
+// @-o-keyframes fadeInFromNone {
+//     from {
+//         display: none;
+//         opacity: 0;
+//     }
+//     to {
+//         display: block;
+//         opacity: 1;
+//     }
+// }
+
+// @keyframes fadeInFromNone {
+//     from {
+//         display: none;
+//         opacity: 0;
+//     }
+//     to {
+//         display: block;
+//         opacity: 1;
+//     }
+// }
+
+// @mixin animated{
+//     @include animation-fill-mode(both);
+//     @include animation-duration(0.5s);
+//     @include animation-timing-function(cubic-bezier(0.0,
+//     0.0,
+//     1.0,
+//     1.0));
+// }
+
+
+// @mixin placeholder($val...) {
+//     &::-webkit-input-placeholder {
+//         color: $val;
+//     }
+
+//     &:-moz-placeholder {
+//         color: $val;
+//         opacity: 1;
+//     }
+
+//     &::-moz-placeholder {
+//         color: $val;
+//         opacity: 1;
+//     }
+
+//     &:-ms-input-placeholder {
+//         color: $val;
+//     }
+
+//     &:placeholder {
+//         color: $val;
+//     }
+// }

@@ -1,0 +1,29 @@
+/*------------------------------------------------------------------
+CSS
+-------------------------------------------------------------------*/
+@import "../font/Roboto/stylesheet.css";
+@import "../font/Montserrat/stylesheet.css";
+@import "../font/icomoon/style.css";
+@import "../font/Squada_One/stylesheet.css";
+@import "../font/Helvetica/stylesheet.css";
+// Fonts
+
+// Core variables and mixins
+@import "config/variables.scss";
+@import "config/flex.scss";
+@import "config/mixins";
+
+// Base
+@import "base/base";
+@import "base/element";
+
+// Partials
+
+@import "partials/section";
+@import "partials/block";
+@import "partials/page";
+@import "partials/responsive";
+
+//custom
+
+@import "partials/custom";
